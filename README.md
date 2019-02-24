@@ -61,17 +61,6 @@ https://API_REST_ID.execute-api.us-east-1.amazonaws.com/dev
 ``` 
    SERVICE_URL: 'YOUR_DEV_SERVICE_API_URL',
 ```
-##### Change Project Name
-If you changed the project name for the microservices, you need to tell the client what the new project name is. You will need to change the src/App/config.js file.
-- edit the src/App/config.js file
-- change the "SERVICE_PROJECT_NAME" to match prefix you used for API Gateway and other services. 
-- if you did not change it leave "SaaSServerless" as prefix.
-- Otherwise change the "SaaSServerless" text to match your new prefix. 
-- NOTE: If this is not set correctly the client will not be able to find the services.
-
-```
-SERVICE_PROJECT_NAME: 'SaaSServerless'
-```
 
 
 ## Installation
