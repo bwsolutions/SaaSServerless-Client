@@ -55,8 +55,9 @@ https://API_REST_ID.execute-api.us-east-1.amazonaws.com/dev
 ```
 
 ## Installation
-- Install packages
+- Install packages from top level Client directory.
 ```
+cd SaasServerless-Client
 npm install
 ```
 
