@@ -1,0 +1,7 @@
+export const modalConstants = {
+    SHOW_MODAL: 'SHOW_MODAL',
+    HIDE_MODAL: 'HIDE_MODAL',
+    DELETE_ITEM: 'DELETE_ITEM',
+    ENABLE_USER: 'ENABLE_USER',
+    CONFIRM_LOGOUT: 'CONFIRM_LOGOUT',
+};

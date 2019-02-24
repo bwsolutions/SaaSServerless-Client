@@ -1,0 +1,45 @@
+/*!
+ * default css for Sass App
+ */
+body {
+    font-size: 16px;
+}
+.nav-brand {
+    font-size: 1.2rem;
+    height: auto!important;
+    padding: 5px 0;
+}
+.logo {
+    width:40px;
+    height: 40px;
+    float:left
+}
+.navbar-nav a {
+    padding: 5px 10px;
+    font-size: 1.2rem;
+}
+.active {
+    font-weight: bold;
+    background-color: deepskyblue;
+}
+.footer {
+    font-size: .8rem;
+}
+.metrics .card-header {
+    padding: .25rem 1rem;
+}
+.health {
+    padding-bottom: 10px;
+}
+.button-group a {
+    padding-right: 5px;
+}
+
+button.icons {
+    padding-right: 5px;
+    padding-left: 0;
+    color: #007bff;
+}
+button.icons:hover {
+    color: #0056b3;
+}

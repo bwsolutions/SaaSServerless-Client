@@ -1,0 +1,21 @@
+
+.HealthCheck .icon {
+  margin-right: 7px;
+  top: 2px;
+}
+.health-image {
+  width:28px;
+  float: left;
+  margin-right: 15px;
+  margin-top: 4px;
+}
+.HealthCheck {
+  color:black;
+  padding: 0 10px;
+}
+.health .row {
+  margin: 15px;
+}
+.HealthCheck h5 {
+  padding-top: 6px;
+}

@@ -1,0 +1,68 @@
+service: saasserverless-client
+
+plugins:
+  - serverless-s3-sync
+
+custom:
+  # Our stage is based on what is passed in when running serverless
+  # commands. Or falls back to what we have set in the provider section.
+  stage: ${opt:stage, self:provider.stage}
+  region: us-east-1
+  # function directory
+  common: "../services/common/"
+  project: ${self:service}
+  s3Sync:
+    - bucketName: ${self:custom.stage}-${self:custom.project}
+      localDir: dist
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: us-east-1
+  environment:
+    stage: ${self:custom.stage}
+
+
+resources:
+  Resources:
+    StaticWebSite:
+      Type: AWS::S3::Bucket
+      Properties:
+        AccessControl: PublicRead
+        BucketName: ${self:custom.stage}-${self:custom.project}
+        WebsiteConfiguration:
+          IndexDocument: index.html
+          ErrorDocument: index.html
+
+    StaticSiteS3BucketPolicy:
+      Type: AWS::S3::BucketPolicy
+      Properties:
+        Bucket:
+          Ref: StaticWebSite
+        PolicyDocument:
+          Statement:
+            - Sid: PublicReadGetObject
+              Effect: Allow
+              Principal: "*"
+              Action:
+                - s3:GetObject
+              Resource:
+                Fn::Join: [
+                  "", [
+                  "arn:aws:s3:::",
+                  {
+                    "Ref": "StaticWebSite"
+                  },
+                  "/*"
+                ]
+                ]
+
+  Outputs:
+    StaticWebSiteURL:
+      Value:
+        Fn::GetAtt:
+          - StaticWebSite
+          - WebsiteURL
+      Export:
+        Name: StaticWebsiteURL

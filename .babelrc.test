@@ -1,0 +1,9 @@
+{
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": { "browsers": ["last 2 chrome versions"] },
+      "useBuiltIns": "entry"
+    }],
+    "@babel/preset-react"
+  ]
+}
