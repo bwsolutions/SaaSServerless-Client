@@ -262,14 +262,15 @@ async function updateAPIendpoints(amplifyConfig) {
     const requestOptions = {
         headers: {},
     };
+    const prefix = config.SERVICE_PROJECT_NAME;
     var urlLists = {
-            "SaasSysReg":       '/SaaSServerless-SysReg-dev-sysReg/1.0.0',
-             "SaasAuth":        '/SaaSServerless-AuthMgr-dev-authMgr/1.0.0',
-             "SaasUser":        '/SaaSServerless-UserMgr-dev-userMgr/1.0.0',
-             "SaasTenantMgr":   '/SaaSServerless-TenantMgr-dev-tenantMgr/1.0.0',
-             "SaasTenantReg":   '/SaaSServerless-TenantReg-dev-tenantReg/1.0.0',
-             "SaasProduct":     '/SaaSServerless-ProductMgr-dev-productMgr/1.0.0',
-             "SaasOrder":       '/SaaSServerless-OrderMgr-dev-orderMgr/1.0.0'
+            "SaasSysReg":       prefix + '-SysReg-dev-sysReg/1.0.0',
+             "SaasAuth":        prefix + '-AuthMgr-dev-authMgr/1.0.0',
+             "SaasUser":        prefix + '-UserMgr-dev-userMgr/1.0.0',
+             "SaasTenantMgr":   prefix + '-TenantMgr-dev-tenantMgr/1.0.0',
+             "SaasTenantReg":   prefix + '-TenantReg-dev-tenantReg/1.0.0',
+             "SaasProduct":     prefix + '-ProductMgr-dev-productMgr/1.0.0',
+             "SaasOrder":       prefix + '-OrderMgr-dev-orderMgr/1.0.0'
     };
     var endpoints = [
         {
@@ -278,7 +279,7 @@ async function updateAPIendpoints(amplifyConfig) {
             region:   config.apiGateway.REGION
         }
     ];
-    var basePath = '/catalog';
+    var basePath = '/catalog/';
     var path ='';
     var keys = Object.keys(urlLists);
 

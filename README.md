@@ -27,6 +27,7 @@ git clone https://github.com/bwsolutions/SaaSServerless-Client.git
 ## Configuration
 You will need to make a couple configuration changes before you build the application. 
 
+##### Create Bucket / website name
 - edit "serverless.yml" file. Change the following line at the top of the file to something unique. This is used as part of a bucket name for the static websiteURL.
 
 Change:
@@ -37,11 +38,12 @@ to:
 ```
 service: saasserverless-client-yourname
 ```
+##### Change AWS region
 - The client assumes this is being deployed in the us-east-1 region. If you installed the services in another region you will need to update the client configuration.
   - Edit the src/App/config.js file
   - this file has different sections based on stage. default is dev, so under dev: change the apiGateway.REGION to be a valid AWS region name.  
     
-- 
+##### Set Service Discovery ENDPOINT
 First we need to go to SaaSServerless-Identity installation and get the ServiceEndpoint.
 ```
 # in the SaaSServerless-Identity directory 
@@ -59,6 +61,18 @@ https://API_REST_ID.execute-api.us-east-1.amazonaws.com/dev
 ``` 
    SERVICE_URL: 'YOUR_DEV_SERVICE_API_URL',
 ```
+##### Change Project Name
+If you changed the project name for the microservices, you need to tell the client what the new project name is. You will need to change the src/App/config.js file.
+- edit the src/App/config.js file
+- change the "SERVICE_PROJECT_NAME" to match prefix you used for API Gateway and other services. 
+- if you did not change it leave "SaaSServerless" as prefix.
+- Otherwise change the "SaaSServerless" text to match your new prefix. 
+- NOTE: If this is not set correctly the client will not be able to find the services.
+
+```
+SERVICE_PROJECT_NAME: 'SaaSServerless'
+```
+
 
 ## Installation
 Install the packages from top level Client directory. The following steps need to be done once to install the needed components.

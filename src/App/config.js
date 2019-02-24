@@ -26,6 +26,9 @@ const env = {
     SYSTEM_SUPPORT_ROLE: 'SystemUser',
     TENANT_ADMIN_ROLE: 'TenantAdmin',
     TENANT_USER_ROLE: 'TenantUser'
+
+    SERVICE_PROJECT_NAME: 'SaaSServerless',
+
   },
 
  dev: {
@@ -62,14 +65,13 @@ const env = {
    // in the line below change 'YOUR_DEV_SERVICE_API_URL' to be the serviceDiscovery URL from the SaaSServerless-Identity Application
 
    SERVICE_URL: 'YOUR_DEV_SERVICE_API_URL',
+   SERVICE_PROJECT_NAME: 'SaaSServerless',
 
  },
 
  prod: {},
 
 };
-logit.log("env = ");
-logit.log(env);
 
 logit.log("process.env = ");
 logit.log(process.env);
