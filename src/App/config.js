@@ -25,7 +25,7 @@ const env = {
     SYSTEM_ADMIN_ROLE: 'SystemAdmin',
     SYSTEM_SUPPORT_ROLE: 'SystemUser',
     TENANT_ADMIN_ROLE: 'TenantAdmin',
-    TENANT_USER_ROLE: 'TenantUser'
+    TENANT_USER_ROLE: 'TenantUser',
 
     SERVICE_PROJECT_NAME: 'SaaSServerless',
 
